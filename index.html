@@ -19,6 +19,7 @@
       <nav class="nav">
         <a href="#about">About</a>
         <a href="#research">Research</a>
+        <a href="#overview">Overview</a>
         <a href="#education">Education</a>
         <a href="#publications">Publications</a>
         <a href="#software">Software</a>
@@ -86,6 +87,32 @@
             <p>Deep learning and statistical methods for biomarker prediction, survival outcomes, and treatment benefit from histopathology images.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Research Overview -->
+    <section id="overview">
+      <div class="container">
+        <h2>Research Overview</h2>
+        <p>My research addresses two fundamental questions in precision medicine: <em>who benefits from a treatment</em>, and <em>through what mechanisms does that benefit arise?</em> Answering them requires integrating causal inference, survival analysis, and statistical learning, while carefully guarding against the over-fitting that flexible subgroup searches can produce.</p>
+        
+        <h3 style="margin-top: 1.8rem; font-family: var(--serif); color: var(--brick);">Dense Random Survival Forests</h3>
+        <p>In the Dense Random Survival Forests framework, I developed a method to identify interpretable patient profiles that exhibit heterogeneous treatment benefit under censored survival outcomes. The approach learns patient similarity through forests designed to capture treatment-effect heterogeneity, translates that similarity into clinically meaningful profiles, and calibrates the evidence for heterogeneity against the null of homogeneous treatment effects. The resulting manuscript is in major revision at the <em>Journal of the Royal Statistical Society: Series C</em>.</p>
+        <img src="images/dense-rsf.jpg" alt="Dense Random Survival Forests conceptual diagram" style="max-width: 100%; height: auto; margin: 1rem 0; border: 1px solid var(--border);" />
+
+        <h3 style="margin-top: 1.8rem; font-family: var(--serif); color: var(--brick);">M-learner Frameworks for Heterogeneous Mediation</h3>
+        <p>The M-survival learner extends the M-learner for heterogeneous mediation analysis to censored survival outcomes. It investigates whether an intermediate biomarker captures a pathway through which treatment improves survival, and whether that relationship varies across patients. This is particularly relevant for surrogate endpoint evaluation. The M-high learner further extends the framework to high-dimensional omics mediators, enabling discovery of heterogeneous mediation effects and interpretable patient subgroups when the number of potential mediators is large.</p>
+        <img src="images/causal-dag.jpg" alt="Causal mediation directed acyclic graph" style="max-width: 100%; height: auto; margin: 1rem 0; border: 1px solid var(--border);" />
+
+        <h3 style="margin-top: 1.8rem; font-family: var(--serif); color: var(--brick);">M-high Learner (High-Dimensional Omics Mediators)</h3>
+        <p>The M-high learner extends the M-learner framework to high-dimensional omics settings. It first screens potential mediators using the R²<sub>Med</sub> measure, then applies the M-learner to each candidate to detect heterogeneous effects, estimates conditional average indirect effects (CAIE) to build an exposure-effect distance matrix, and finally uses t-SNE + K-means with calibration to identify interpretable heterogeneous subgroups. The method is designed to distinguish true heterogeneous mediators from null or homogeneous signals while controlling Type I error, and has been applied to gene expression data from the Framingham Heart Study and MESA. The manuscript is in major revision at <em>PLOS Genetics</em>.</p>
+        <img src="images/m-high-pipeline.jpg" alt="M-high-learner pipeline diagram" style="max-width: 100%; height: auto; margin: 1rem 0; border: 1px solid var(--border);" />
+
+        <h3 style="margin-top: 1.8rem; font-family: var(--serif); color: var(--brick);">SurroPilot</h3>
+        <p>SurroPilot translates these methods into an accessible R Shiny platform that uses large language models to assist researchers throughout the analytical workflow—from data understanding and variable selection to heterogeneous mediation analysis, subgroup interpretation, and automated report generation—while preserving statistical rigor through a human-in-the-loop design.</p>
+        <img src="images/surropilot-workflow.jpg" alt="SurroPilot platform workflow" style="max-width: 100%; height: auto; margin: 1rem 0; border: 1px solid var(--border);" />
+
+        <p style="margin-top: 1.5rem;">Together, these projects aim to make rigorous, interpretable analyses of heterogeneous treatment and mediation effects more accessible for clinical trial and biomedical research.</p>
       </div>
     </section>
 
